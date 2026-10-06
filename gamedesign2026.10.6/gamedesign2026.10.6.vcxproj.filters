@@ -7,10 +7,66 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{4b307637-7e1f-4d1f-b02c-a635858bfe7b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sounds\SceneBase">
+      <UniqueIdentifier>{f051b501-931e-4355-b39e-11b027032583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sounds\SceneBase\MenuScene">
+      <UniqueIdentifier>{c0bc0f4d-48f6-4053-ad7e-3c48dc331bf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sounds\SceneBase\BattleScene">
+      <UniqueIdentifier>{4473bbdc-bc7d-4ccf-ae0c-5281eee3264b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sounds\SceneBase\TitleScene">
+      <UniqueIdentifier>{95f3a02e-e721-4c43-bf72-754abaa4cacd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sounds\SceneBase\CharacterSelectScene">
+      <UniqueIdentifier>{e9790445-1f51-4b6f-9acc-2f51ee9b86d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sounds\SceneBase\ResultScene">
+      <UniqueIdentifier>{e5628534-b0ec-41bd-9699-99b0f69c1a1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
       <Filter>Sounds</Filter>
     </ClCompile>
+    <ClCompile Include="SceneBase.cpp">
+      <Filter>Sounds\SceneBase</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Sounds\SceneBase\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteleScene.cpp">
+      <Filter>Sounds\SceneBase\BattleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectScene.cpp">
+      <Filter>Sounds\SceneBase\CharacterSelectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>Sounds\SceneBase\MenuScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ReculeScene.cpp">
+      <Filter>Sounds\SceneBase\ResultScene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SceneBase.h">
+      <Filter>Sounds\SceneBase</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Sounds\SceneBase\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteleScene.h">
+      <Filter>Sounds\SceneBase\BattleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectScene.h">
+      <Filter>Sounds\SceneBase\CharacterSelectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>Sounds\SceneBase\MenuScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultScene.h">
+      <Filter>Sounds\SceneBase\ResultScene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
