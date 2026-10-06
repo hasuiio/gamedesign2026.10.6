@@ -3,11 +3,16 @@
 
 class MenuScene : public SceneBase
 {
-public:
+private:
+    int nextScene;
 
+public:
     MenuScene();
 
+    void Initialize() override;
     void Input() override;
     void Update() override;
     void Draw() override;
+
+    int GetNextScene() override;
 };

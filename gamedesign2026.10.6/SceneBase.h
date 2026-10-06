@@ -5,6 +5,8 @@ class SceneBase
 public:
 	virtual ~SceneBase() {}
 
+	// 一回だけ
+	virtual void Initialize() = 0;
 	// 入力処理
 	virtual void Input() = 0;
 	// 更新
@@ -12,5 +14,6 @@ public:
 	// 描画
 	virtual void Draw() = 0;
 
-	SceneBase();
+	// 次のシーン番号
+	virtual int GetNextScene() = 0;
 };
