@@ -1,5 +1,8 @@
 #include "BatteleScene.h"
 #include <iostream>
+#include <limits>
+#include <cstdlib>
+#include <ctime>
 
 BatteleScene::BatteleScene()
 {
@@ -10,6 +13,9 @@ BatteleScene::BatteleScene()
 
     // 敵を初期化
     enemy = { "", 0, 0, 0 };
+
+    // 最初の一回だけ乱数調整
+    srand((unsigned int)time(nullptr));
 }
 
 void BatteleScene::Initialize()
@@ -17,7 +23,7 @@ void BatteleScene::Initialize()
     nextScene = 0;
 
     // 敵を作る
-    enemy = { "スライム", 80, 15, 5 };
+    enemy = { "スライム", 80, 25, 5 };
 }
 
 void BatteleScene::SetPlayer(CharacterData::Data character)
@@ -32,6 +38,8 @@ void BatteleScene::Input()
     std::cout << "コマンドを選択：";
     std::cin >> input;
 
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     if (input == 1)
     {
         // 敵に与えるダメージ
@@ -43,6 +51,22 @@ void BatteleScene::Input()
             damage = 1;
         }
 
+        // スライムがランダムで防御する
+        int random = rand() % 100;
+
+        if (random < 30)
+        {
+            // 防御成功
+            damage /= 2;
+
+            std::cout << enemy.name << "は防御した！\n";
+        }
+        else
+        {
+            std::cout << enemy.name << "は防御できなかった！\n";
+        }
+
+        // ダメージを与える
         enemy.hp -= damage;
 
         std::cout << "\n";

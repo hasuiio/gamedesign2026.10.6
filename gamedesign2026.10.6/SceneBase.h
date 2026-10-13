@@ -3,7 +3,7 @@
 class SceneBase
 {
 public:
-	virtual ~SceneBase() {}
+	virtual ~SceneBase() = default;
 
 	// ˆê‰ñ‚¾‚¯
 	virtual void Initialize() = 0;

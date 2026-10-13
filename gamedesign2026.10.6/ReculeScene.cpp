@@ -41,5 +41,6 @@ void ResultScene::Draw()
 
 int ResultScene::GetNextScene()
 {
+    system("cls");
     return nextScene;
 }

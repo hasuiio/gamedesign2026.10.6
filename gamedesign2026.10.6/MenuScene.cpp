@@ -49,5 +49,6 @@ void MenuScene::Draw()
 
 int MenuScene::GetNextScene()
 {
+    system("cls");
     return nextScene;
 }

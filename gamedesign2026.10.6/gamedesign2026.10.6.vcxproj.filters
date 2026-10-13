@@ -36,9 +36,6 @@
     <ClCompile Include="WinMain.cpp">
       <Filter>Sounds</Filter>
     </ClCompile>
-    <ClCompile Include="SceneBase.cpp">
-      <Filter>Sounds\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="TitleScene.cpp">
       <Filter>Sounds\Scene\TitleScene</Filter>
     </ClCompile>

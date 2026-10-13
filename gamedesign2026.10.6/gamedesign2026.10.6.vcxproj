@@ -24,7 +24,6 @@
     <ClCompile Include="CharacterSelectScene.cpp" />
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="ReculeScene.cpp" />
-    <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="WinMain.cpp" />

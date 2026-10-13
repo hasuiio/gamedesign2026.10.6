@@ -9,8 +9,14 @@ private:
     CharacterData character;
 
     int nextScene;
+
+    // キャラクター選択
+    int serectchara;
+
 public:
     CharacterSelectScene();
+
+    CharacterData::Data GetSelectedCharacter();
 
     void Initialize() override;
     void Input() override;

@@ -1,5 +1,6 @@
 #include "TitleScene.h"
 #include <iostream>
+#include <limits>
 
 TitleScene::TitleScene()
 {
@@ -14,6 +15,8 @@ void TitleScene::Initialize()
 void TitleScene::Input()
 {
     char input;
+
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cin.get(input);
 
@@ -39,5 +42,6 @@ void TitleScene::Draw()
 
 int TitleScene::GetNextScene()
 {
+    system("cls");
     return nextScene;
 }

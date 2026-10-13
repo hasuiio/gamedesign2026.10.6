@@ -4,11 +4,13 @@
 CharacterSelectScene::CharacterSelectScene()
 {
     nextScene = 0;
+    serectchara = 0;
 }
 
 void CharacterSelectScene::Initialize()
 {
     nextScene = 0;
+    serectchara = 0;
 }
 
 // キャラクター選ぶ
@@ -35,6 +37,8 @@ void CharacterSelectScene::Input()
         std::cout << "防御 : "
             << character.characterData[index].defense << "\n";
 
+        serectchara = index;
+
         nextScene = 4;
     }
 }
@@ -54,7 +58,14 @@ void CharacterSelectScene::Draw()
     std::cout << "3 - " << character.characterData[2].name << "\n";
 }
 
+CharacterData::Data CharacterSelectScene::GetSelectedCharacter()
+{
+    // 選択したキャラクターのデータを返す
+    return character.characterData[serectchara];
+}
+
 int CharacterSelectScene::GetNextScene()
 {
+    system("cls");
     return nextScene;
 }
