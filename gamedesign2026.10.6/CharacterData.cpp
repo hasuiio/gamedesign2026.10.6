@@ -14,8 +14,8 @@ void CharacterData::MonsterData()
     characterData[0] = { "スライム", 50, 10, 5 };
 
     // モンスター2：普通
-    characterData[1] = { "ゴブリン", 80, 20, 10 };
+    characterData[1] = { "ゴブリン", 40, 18, 10 };
 
     // モンスター3：強い
-    characterData[2] = { "ドラゴン", 150, 35, 20 };
+    characterData[2] = { "ドラゴン", 130, 20, 15 };
 }

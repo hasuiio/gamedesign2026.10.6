@@ -31,16 +31,29 @@ void ResultScene::Update()
 void ResultScene::Draw()
 {
     std::cout << "====================\n";
-    std::cout << "  　　　結果\n";
+    std::cout << "       結果\n";
     std::cout << "====================\n";
+
+    if (isWin)
+    {
+        std::cout << "勝利！おめでとう！\n";
+    }
+    else
+    {
+        std::cout << "敗北...\n";
+    }
+
     std::cout << "\n";
-    std::cout << "YOU WIN!!\n";
-    std::cout << "\n";
-    std::cout << "Enterキーで戻る\n";
+    std::cout << "Enterキーでメニューへ\n";
 }
 
 int ResultScene::GetNextScene()
 {
     system("cls");
     return nextScene;
+}
+
+void ResultScene::SetResult(bool win)
+{
+    isWin = win;
 }

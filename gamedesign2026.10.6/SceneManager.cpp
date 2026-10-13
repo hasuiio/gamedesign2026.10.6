@@ -1,5 +1,8 @@
-#include "SceneManager.h"
 #include <iostream>
+#include "SceneManager.h"
+#include "BatteleScene.h"
+#include "ResultScene.h"
+
 
 SceneManager::SceneManager()
 {
@@ -55,6 +58,10 @@ void SceneManager::Update()
     }
     else if (nextScene == 5)
     {
+        // ƒoƒgƒ‹‚ÌŸ”s‚ğŒ‹‰Ê‰æ–Ê‚É“n‚·
+        result.SetResult(battele.GetIsWin());
+
+        // Œ‹‰Ê‰æ–Ê‚ÖˆÚ“®
         ChangeScene(&result);
     }
     else if (nextScene == 99)

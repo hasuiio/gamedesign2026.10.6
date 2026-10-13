@@ -22,12 +22,17 @@ private:
     // バトル中か、報酬選択中か
     int battleState;
 
+    // 勝敗結果
+    bool isWin;
+
     //今の状態
     enum BattleState
     {
         BATTLE_FIGHT,   // バトル中
         BATTLE_REWARD   // 報酬選択中
     };
+
+    
 
 public:
 
@@ -42,4 +47,7 @@ public:
 
     // キャラクターを受け取る
     void SetPlayer(CharacterData::Data character);
+
+    // 勝敗を取得する
+    bool GetIsWin();
 };

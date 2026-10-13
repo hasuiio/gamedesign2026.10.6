@@ -7,6 +7,7 @@
 BatteleScene::BatteleScene()
 {
     nextScene = 0;
+    isWin = false;
 
     // プレイヤーを初期化
     player = { "", 0, 0, 0 };
@@ -22,6 +23,9 @@ void BatteleScene::Initialize()
 {
     nextScene = 0;
 
+    // バトルの結果
+    isWin = false;
+
     // 敵を3体用意
     enemies[0] = { "スライム", 50, 10, 5 };
     enemies[1] = { "ゴブリン", 80, 20, 10 };
@@ -33,6 +37,9 @@ void BatteleScene::Initialize()
 
     // バトル開始
     battleState = BATTLE_FIGHT;
+
+    // 敵の登場メッセージ
+    std::cout << enemy.name << "があらわれた！\n";
 }
 
 void BatteleScene::SetPlayer(CharacterData::Data character)
@@ -74,6 +81,8 @@ void BatteleScene::Input()
         if (enemyIndex >= 3)
         {
             std::cout << "すべての敵を倒した！\n";
+
+            isWin = true;
             nextScene = 5;
             return;
         }
@@ -133,6 +142,10 @@ void BatteleScene::Input()
 
             std::cout << enemy.name << "を倒した！\n";
 
+            enemy = enemies[enemyIndex];
+
+            std::cout << enemy.name << "があらわれた！\n";
+
             // 報酬選択へ
             battleState = BATTLE_REWARD;
             return;
@@ -159,6 +172,7 @@ void BatteleScene::Input()
 
             std::cout << player.name << "は倒れた...\n";
 
+            isWin = false;
             nextScene = 5;
         }
     }
@@ -208,4 +222,9 @@ void BatteleScene::Draw()
 int BatteleScene::GetNextScene()
 {
     return nextScene;
+}
+
+bool BatteleScene::GetIsWin()
+{
+    return isWin;
 }
