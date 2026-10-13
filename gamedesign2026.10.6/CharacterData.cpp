@@ -6,3 +6,16 @@ CharacterData::CharacterData()
     characterData[1] = { "魔法使い", 70, 30, 5 };
     characterData[2] = { "？？？", 80, 25, 10 };
 }
+
+
+void CharacterData::MonsterData()
+{
+    // モンスター1：弱い
+    characterData[0] = { "スライム", 50, 10, 5 };
+
+    // モンスター2：普通
+    characterData[1] = { "ゴブリン", 80, 20, 10 };
+
+    // モンスター3：強い
+    characterData[2] = { "ドラゴン", 150, 35, 20 };
+}

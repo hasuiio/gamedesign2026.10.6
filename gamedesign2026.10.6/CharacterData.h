@@ -16,5 +16,11 @@ public:
 
     Data characterData[3];
 
+    Data monsterData[3];
+
+    // キャラクターデータ
     CharacterData();
+
+    // モンスターデータ
+    void MonsterData();
 };

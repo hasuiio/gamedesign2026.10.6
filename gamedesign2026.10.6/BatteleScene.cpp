@@ -22,8 +22,17 @@ void BatteleScene::Initialize()
 {
     nextScene = 0;
 
-    // 敵を作る
-    enemy = { "スライム", 80, 25, 5 };
+    // 敵を3体用意
+    enemies[0] = { "スライム", 50, 10, 5 };
+    enemies[1] = { "ゴブリン", 80, 20, 10 };
+    enemies[2] = { "ドラゴン", 150, 35, 20 };
+
+    // 最初の敵
+    enemyIndex = 0;
+    enemy = enemies[enemyIndex];
+
+    // バトル開始
+    battleState = BATTLE_FIGHT;
 }
 
 void BatteleScene::SetPlayer(CharacterData::Data character)
@@ -34,6 +43,49 @@ void BatteleScene::SetPlayer(CharacterData::Data character)
 void BatteleScene::Input()
 {
     int input;
+
+    // 報酬選択中
+    if (battleState == BATTLE_REWARD)
+    {
+        std::cout << "報酬を選択：";
+
+        std::cin >> input;
+        std::cin.ignore(
+            std::numeric_limits<std::streamsize>::max(), '\n');
+
+        if (input == 1)
+        {
+            player.hp += 30;
+            std::cout << "HPが30回復した！\n";
+        }
+        else if (input == 2)
+        {
+            player.attack += 5;
+            std::cout << "攻撃力が5上がった！\n";
+        }
+        else
+        {
+            return; // 1か2を選ぶまで待つ
+        }
+
+        // 次の敵がいるか確認
+        enemyIndex++;
+
+        if (enemyIndex >= 3)
+        {
+            std::cout << "すべての敵を倒した！\n";
+            nextScene = 5;
+            return;
+        }
+
+        // 次の敵を登場させる
+        enemy = enemies[enemyIndex];
+
+        std::cout << enemy.name << "が現れた！\n";
+
+        battleState = BATTLE_FIGHT;
+        return;
+    }
 
     std::cout << "コマンドを選択：";
     std::cin >> input;
@@ -74,15 +126,15 @@ void BatteleScene::Input()
         std::cout << enemy.name << "に"
             << damage << "ダメージ！\n";
 
-        // 敵が倒れた
+        // 敵が倒れたら報酬場面へ
         if (enemy.hp <= 0)
         {
             enemy.hp = 0;
 
             std::cout << enemy.name << "を倒した！\n";
 
-            // とりあえず結果画面へ
-            nextScene = 5;
+            // 報酬選択へ
+            battleState = BATTLE_REWARD;
             return;
         }
 
@@ -123,6 +175,16 @@ void BatteleScene::Update()
 
 void BatteleScene::Draw()
 {
+    if (battleState == BATTLE_REWARD)
+    {
+        std::cout << "====================\n";
+        std::cout << "      報酬選択\n";
+        std::cout << "====================\n";
+        std::cout << "1 - HPを30回復\n";
+        std::cout << "2 - 攻撃力を5アップ\n";
+        return;
+    }
+
     std::cout << "====================\n";
     std::cout << "       バトル\n";
     std::cout << "====================\n";
