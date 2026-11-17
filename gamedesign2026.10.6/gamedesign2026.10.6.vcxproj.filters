@@ -31,6 +31,15 @@
     <Filter Include="Sounds\Data">
       <UniqueIdentifier>{aa43f535-d691-4acd-9be0-d4bfeaa5ad62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sounds\View">
+      <UniqueIdentifier>{b7b989ee-257c-41f0-8ba1-35f7447fae30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sounds\Contlor">
+      <UniqueIdentifier>{7c34c8e1-8634-4b43-87cb-95a517f5fefd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sounds\Modle">
+      <UniqueIdentifier>{8584b74b-d1f2-4dd4-9949-4794eadbb3c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -57,6 +66,15 @@
     <ClCompile Include="CharacterData.cpp">
       <Filter>Sounds\Data</Filter>
     </ClCompile>
+    <ClCompile Include="BatteleView.cpp">
+      <Filter>Sounds\View</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteleModle.cpp">
+      <Filter>Sounds\Modle</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteleContlor.cpp">
+      <Filter>Sounds\Contlor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneBase.h">
@@ -82,6 +100,15 @@
     </ClInclude>
     <ClInclude Include="CharacterData.h">
       <Filter>Sounds\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteleView.h">
+      <Filter>Sounds\View</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteleModle.h">
+      <Filter>Sounds\Modle</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteleContlor.h">
+      <Filter>Sounds\Contlor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
