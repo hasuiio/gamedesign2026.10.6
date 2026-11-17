@@ -1,18 +1,18 @@
 #include"BatteleView.h"
 #include<iostream>
 
-void BatteleView::Draw()
+void BatteleView::DrawReward()
 {
-    if (battleState == BATTLE_REWARD)
-    {
-        std::cout << "====================\n";
-        std::cout << "      報酬選択\n";
-        std::cout << "====================\n";
-        std::cout << "1 - HPを30回復\n";
-        std::cout << "2 - 攻撃力を5アップ\n";
-        return;
-    }
+    std::cout << "====================\n";
+    std::cout << "      報酬選択\n";
+    std::cout << "====================\n";
+    std::cout << "1 - HPを30回復\n";
+    std::cout << "2 - 攻撃力を5アップ\n";
+   
+}
 
+void BatteleView::DrawBattle(CharacterData::Data player, CharacterData::Data enemy)
+{
     std::cout << "====================\n";
     std::cout << "       バトル\n";
     std::cout << "====================\n";
