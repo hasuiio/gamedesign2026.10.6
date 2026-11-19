@@ -39,7 +39,7 @@ int BatteleModle::Input()
 	}
     else
     {
-        return;
+        return 0;
     }
 }
 
@@ -55,6 +55,8 @@ int BatteleModle::StateManager(int battleState)
 		BattleUpdate();
 		break;
 	}
+
+    return 0;
 }
 
 void BatteleModle::CheckEnemy()
